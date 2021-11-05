@@ -22,7 +22,6 @@
 #include <utils/String8.h>
 #include <utils/Vector.h>
 #include <binder/Parcelable.h>
-#include <camera/VendorTagDescriptor.h>
 
 namespace android {
 
@@ -169,12 +168,6 @@ class CameraMetadata: public Parcelable {
      * Delete metadata entry by tag
      */
     status_t erase(uint32_t tag);
-
-    /**
-     * Remove metadata entries that need additional permissions.
-     */
-    status_t removePermissionEntries(metadata_vendor_id_t vendorId,
-            std::vector<int32_t> *tagsRemoved /*out*/);
 
     /**
      * Swap the underlying camera metadata between this and the other
